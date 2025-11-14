@@ -6,9 +6,6 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract EventTicket is ERC721, Ownable {
-
-    // 
-
     // using a simple uint256 for the counter.
     uint256 private _tokenIdCounter;
 
