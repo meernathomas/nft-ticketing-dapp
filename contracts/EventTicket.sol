@@ -5,16 +5,11 @@ pragma solidity ^0.8.24;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-//
-// NOTE: We have REMOVED "Counters.sol". It is no longer needed
-// in Solidity 0.8+ as it has built-in overflow protection.
-//
-
 contract EventTicket is ERC721, Ownable {
 
-    // --- State Variables ---
+    // 
 
-    // We use a simple uint256 for the counter now.
+    // using a simple uint256 for the counter.
     uint256 private _tokenIdCounter;
 
     uint256 public immutable ticketPrice;
@@ -29,7 +24,7 @@ contract EventTicket is ERC721, Ownable {
 
     mapping(uint256 => ResaleListing) public resaleListings;
 
-    // --- Events ---
+    //Events 
     event TicketMinted(uint256 tokenId, address owner);
     event TicketListed(uint256 tokenId, uint256 price, address seller);
     event TicketSold(uint256 tokenId, uint256 price, address from, address to);
@@ -50,7 +45,7 @@ contract EventTicket is ERC721, Ownable {
         maxTickets = _maxTickets;
         maxResalePrice = (_price * 150) / 100; // 1.5x original price
         
-        // We start the counter at 0. The first ticket minted will be ID 1.
+        //The first ticket minted will be ID 1.
         _tokenIdCounter = 0;
     }
 
@@ -58,16 +53,13 @@ contract EventTicket is ERC721, Ownable {
      * @dev Mints a new ticket.
      */
     function mintTicket() public payable {
-        // Use the simple counter variable
         uint256 currentSupply = _tokenIdCounter;
         
         require(currentSupply < maxTickets, "Sorry, this event is sold out.");
         require(msg.value == ticketPrice, "Incorrect ticket price.");
 
-        // Increment the counter using ++
         _tokenIdCounter++;
         
-        // Use the new counter value for the ID
         uint256 newItemId = _tokenIdCounter;
         
         _safeMint(msg.sender, newItemId);
@@ -115,7 +107,6 @@ contract EventTicket is ERC721, Ownable {
         require(success, "Withdraw failed.");
     }
 
-    // --- Helper Functions ---
 
     /**
      * @dev Returns the current total supply of tickets.
