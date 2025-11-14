@@ -81,7 +81,7 @@ Edit the details (price, name, etc.) in `scripts/deploy-event.js` to one's likin
 npx hardhat run scripts/deploy-event.js --network sepolia
 ```
 
-**Success\!** The terminal will output the new contract address.
+**Success** The terminal will output the new contract address.
 
 -----
 
