@@ -119,3 +119,5 @@ This is the best way to test the full application.
       * Find the **`mintTicket`** function.
       * In the **`payableAmount (ether)`** box, type **`0.01`**.
       * Click the **"Write"** button and approve the transaction.
+
+![Alt text](/ui-screenshot.png/Screenshot 2025-11-25 162858.png)
