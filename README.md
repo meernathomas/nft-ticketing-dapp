@@ -120,4 +120,4 @@ This is the best way to test the full application.
       * In the **`payableAmount (ether)`** box, type **`0.01`**.
       * Click the **"Write"** button and approve the transaction.
 
-![Alt text](./ui-screenshot.png/Screenshot 2025-11-25 162858.png)
+![Alt text](/ui-screenshot.png/Screenshot 2025-11-25 162858.png)
